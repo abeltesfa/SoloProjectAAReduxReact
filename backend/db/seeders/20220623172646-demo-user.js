@@ -18,6 +18,31 @@ module.exports = {
         email: 'user2@user.io',
         username: 'FakeUser2',
         hashedPassword: bcrypt.hashSync('password3')
+      },
+      {
+        email: 'lebron@nba.com',
+        username: 'KingJames',
+        hashedPassword: bcrypt.hashSync('password')
+      },
+      {
+        email: 'steph@nba.com',
+        username: 'ChefCurry',
+        hashedPassword: bcrypt.hashSync('password')
+      },
+      {
+        email: 'kevin@nba.com',
+        username: 'KevinDurant',
+        hashedPassword: bcrypt.hashSync('password')
+      },
+      {
+        email: 'luka@nba.com',
+        username: 'LukaDoncic',
+        hashedPassword: bcrypt.hashSync('password')
+      },
+      {
+        email: 'giannis@nba.com',
+        username: 'GiannisAntetokounmpo',
+        hashedPassword: bcrypt.hashSync('password')
       }
     ], {});
   },
