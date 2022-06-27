@@ -36,7 +36,7 @@ export const createPost = (payload) => async (dispatch) => {
     if (response.ok) {
       const post = await response.json();
       dispatch(addPost(post));
-      return article;
+      return post;
     }
   };
 // export const getOnePost = postId => async dispatch => {
