@@ -6,7 +6,7 @@ const { Post } = require('../../db/models')
 
 router.get('/', asyncHandler( async(req, res) => {
     const posts = await Post.findAll();
-    console.log(posts);
+    // console.log(posts);
     res.json(posts);
 }))
 

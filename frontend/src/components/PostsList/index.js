@@ -7,7 +7,8 @@ import { fetchPosts } from '../../store/postReducer';
 const PostsList = () => {
     const dispatch = useDispatch();
 
-    const posts = useSelector(state=>state.posts.entries);
+    const posts = useSelector(state=>state.posts);
+
 
     useEffect(() => {
         dispatch(fetchPosts());
@@ -15,13 +16,13 @@ const PostsList = () => {
 
       useEffect(() => {
     }, [posts]);
-    console.log(posts)
+    // console.log(posts)
 
     return (
         <div>
             <ul>
                 {Object.values(posts).map(({ id, title }) => (
-                    <li key={id}><NavLink to={`/post/${id}`}>{title}</NavLink></li>
+                    <li key={id}><NavLink to={`/posts/${id}`}>{title}</NavLink></li>
                 ))}
             </ul>
         </div>
