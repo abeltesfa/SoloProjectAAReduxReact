@@ -39,6 +39,24 @@ export const createPost = (payload) => async (dispatch) => {
       return post;
     }
   };
+
+
+export const updatePost = post => async dispatch => {
+    const response = await csrfFetch(`/api/posts/${post.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(post)
+    });
+
+    if (response.ok) {
+        const post = await response.json();
+        dispatch(addPost(post));
+        return post
+    }
+
+}
 // export const getOnePost = postId => async dispatch => {
 //     const response = await csrfFetch(`/api/posts/${postId}`);
 
@@ -53,14 +71,14 @@ const initialState = { }
 const postReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_POSTS:
-            const newState = {...state, ...state.posts };
+            const newState = {};
             action.posts.forEach(
                 (post) => (newState[post.id] = post)
             );
             return newState;
 
         case ADD_POST:
-            const newState2  = {...state, ...state.posts, [action.post.id]: action.post}
+            const newState2  = {...state,  [action.post.id]: action.post}
 
             return newState2;
         default:
