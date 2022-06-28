@@ -39,6 +39,24 @@ export const createPost = (payload) => async (dispatch) => {
       return post;
     }
   };
+
+
+export const updatePost = post => async dispatch => {
+    const response = await csrfFetch(`/api/posts/${post.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(post)
+    });
+
+    if (response.ok) {
+        const post = await response.json();
+        dispatch(addPost(post));
+        return post
+    }
+
+}
 // export const getOnePost = postId => async dispatch => {
 //     const response = await csrfFetch(`/api/posts/${postId}`);
 
