@@ -8,6 +8,7 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import PostsList from "./components/PostsList";
 import SinglePost from "./components/SinglePost";
+import AddPost from "./components/AddPost"
 
 function App() {
   const dispatch = useDispatch();
@@ -23,13 +24,18 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/login">
+          <Route exact path='/'>
+            <PostsList/>
+          </Route>
+          <Route exact path="/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
-          <PostsList exact path='/'/>
+          <Route exact path='/posts/new'>
+            <AddPost />
+          </Route>
           <Route exact path='/posts/:postId'>
             <SinglePost posts={posts} />
           </Route>

@@ -27,7 +27,7 @@ export const fetchPosts = () => async (dispatch) => {
 };
 
 export const createPost = (payload) => async (dispatch) => {
-    const response = await csrfFetch('/api/posts/new', {
+    const response = await csrfFetch('/api/posts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
