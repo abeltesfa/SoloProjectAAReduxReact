@@ -16,4 +16,15 @@ router.post('/', asyncHandler(async (req, res) => {
     return res.json(post)
 }))
 
+router.put('/:postId', asyncHandler( async function (req, res) {
+    const postId = req.params.postId
+    const post = await Post.findByPk(postId)
+
+    const {title, body} = req.body;
+    await post.update({title, body});
+    await post.save()
+    return res.json(post);
+
+}))
+
 module.exports = router;

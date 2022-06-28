@@ -71,14 +71,14 @@ const initialState = { }
 const postReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_POSTS:
-            const newState = {...state, ...state.posts };
+            const newState = {};
             action.posts.forEach(
                 (post) => (newState[post.id] = post)
             );
             return newState;
 
         case ADD_POST:
-            const newState2  = {...state, ...state.posts, [action.post.id]: action.post}
+            const newState2  = {...state,  [action.post.id]: action.post}
 
             return newState2;
         default:
