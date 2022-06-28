@@ -31,6 +31,7 @@ export const fetchPosts = () => async (dispatch) => {
 
     if (response.ok){
         dispatch(loadPosts(posts));
+        return posts
     }
 };
 

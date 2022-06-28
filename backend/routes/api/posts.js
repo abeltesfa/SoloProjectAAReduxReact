@@ -27,4 +27,14 @@ router.put('/:postId', asyncHandler( async function (req, res) {
 
 }))
 
+router.delete('/:postId', asyncHandler( async function (req, res) {
+    const postId = req.params.postId
+    const post = await Post.findByPk(postId)
+    await post.destroy();
+
+    return res.json(post);
+
+}))
+
+
 module.exports = router;

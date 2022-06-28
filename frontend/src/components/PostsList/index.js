@@ -9,6 +9,10 @@ const PostsList = () => {
     const history = useHistory();
 
     const posts = useSelector(state=>state.posts);
+    const session = useSelector(state => state.session);
+
+
+
 
 
     useEffect(() => {
@@ -26,7 +30,9 @@ const PostsList = () => {
                     <li key={id}><NavLink to={`/posts/${id}`}>{title}</NavLink></li>
                 ))}
             </ul>
+            {session.user &&
             <button onClick={() => history.push('./posts/new')}>Create Post</button>
+            }
         </div>
     )
 }
