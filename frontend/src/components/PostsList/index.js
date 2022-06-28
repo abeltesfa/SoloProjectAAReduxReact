@@ -1,13 +1,18 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { fetchPosts } from '../../store/postReducer';
 
 
 const PostsList = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const posts = useSelector(state=>state.posts);
+    const session = useSelector(state => state.session);
+
+
+
 
 
     useEffect(() => {
@@ -25,6 +30,9 @@ const PostsList = () => {
                     <li key={id}><NavLink to={`/posts/${id}`}>{title}</NavLink></li>
                 ))}
             </ul>
+            {session.user &&
+            <button onClick={() => history.push('./posts/new')}>Create Post</button>
+            }
         </div>
     )
 }

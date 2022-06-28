@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { updatePost } from '../../store/postReducer';
 
 
 const EditPost = ({singlePost, hideForm}) => {
     const [title, setTitle] = useState(singlePost.title);
     const [body, setBody] = useState(singlePost.body);
+
+    // const session = useSelector(state => state.session);
+
 
     const dispatch = useDispatch();
 

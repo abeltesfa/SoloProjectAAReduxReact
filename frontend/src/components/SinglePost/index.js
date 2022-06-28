@@ -1,16 +1,23 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { fetchPosts } from '../../store/postReducer';
+import { useHistory, useParams } from 'react-router-dom';
+import { useDispatch,useSelector } from 'react-redux';
+import { deletePost, fetchPosts } from '../../store/postReducer';
 import EditPost from '../EditPost';
 
 
 const SinglePost = ( { posts }) => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const { postId } = useParams();
     const singlePost = posts[postId]
     const [showEditPost, setShowEditPost] = useState(false);
-    const [editPostId, setEditPostId] = useState(null);
+    const user = useSelector(state => state.session.user);
+
+    // const userCheck = () => {
+    //     if(singlePost?.userId === +session?.user.id) {
+    //         return true
+    //     }
+    // }
 
     // const post = useSelector(state => state.posts.postId)
 
@@ -20,6 +27,7 @@ const SinglePost = ( { posts }) => {
 
       useEffect(() => {
     }, [posts]);
+
     let content=null;
 
     if(showEditPost) {
@@ -31,19 +39,32 @@ const SinglePost = ( { posts }) => {
         )
     }
 
+    const deleteRedirect = async () => {
+        await dispatch(deletePost(singlePost.id));
+        const loaded = await dispatch(fetchPosts());
+        if (loaded){
+            history.push('/')
+        }
+    }
+
     return (
+        singlePost ?
         <div>
             <h1>{singlePost?.title}</h1>
             <p>{singlePost?.body}</p>
             <div>
-                {!showEditPost && (
+                {(!showEditPost && (singlePost.userId === user?.id )) && (
                     <button onClick={() => setShowEditPost(true)}>Edit</button>
+                )}
+                {(singlePost.userId === user?.id ) && (
+                    <button onClick={deleteRedirect}>Delete Post</button>
                 )}
             </div>
             <div>
                 {content}
             </div>
         </div>
+        : null
     )
 }
 
