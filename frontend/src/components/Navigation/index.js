@@ -3,10 +3,21 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import { useDispatch } from 'react-redux';
+import * as sessionActions from '../../store/session';
 import './Navigation.css';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const dispatch = useDispatch();
+
+  const credential = 'Demo-lition';
+  const password = 'password';
+
+  const DemoLogin = (e) => {
+    return dispatch(sessionActions.login({ credential, password }))
+  }
+
 
   let sessionLinks;
   if (sessionUser) {
@@ -18,6 +29,7 @@ function Navigation({ isLoaded }){
       <>
         <NavLink to="/login">Log In</NavLink>
         <NavLink to="/signup">Sign Up</NavLink>
+        <button onClick={DemoLogin}>Demo User</button>
       </>
     );
   }
