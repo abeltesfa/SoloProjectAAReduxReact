@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deletePost, fetchPosts } from '../../store/postReducer';
 import EditPost from '../EditPost';
 import CommentList from '../CommentList';
+import AddComment from '../AddComment';
 
 
 const SinglePost = ({ posts }) => {
@@ -12,7 +13,9 @@ const SinglePost = ({ posts }) => {
     const { postId } = useParams();
     const singlePost = posts[postId]
     const [showEditPost, setShowEditPost] = useState(false);
+    const [showAddComment, setShowAddComment] = useState(false)
     const user = useSelector(state => state.session.user);
+
 
 
 
@@ -25,11 +28,22 @@ const SinglePost = ({ posts }) => {
 
     let content = null;
 
+    let commentContent = null;
+
     if (showEditPost) {
         content = (
             <EditPost
                 singlePost={singlePost}
                 hideForm={() => setShowEditPost(false)}
+            />
+        )
+    }
+
+    if (showAddComment) {
+        commentContent = (
+            <AddComment
+            postId={postId}
+            hideForm={() => setShowAddComment(false)}
             />
         )
     }
@@ -56,9 +70,19 @@ const SinglePost = ({ posts }) => {
                     <button onClick={deleteRedirect}>Delete Post</button>
                 )}
             </div>
+            {user ?
+            <div>
+                <CommentList />
+                <button onClick={() => setShowAddComment(true)}>Add Comment</button>
+                {commentContent}
+            </div>
+            :
             <div>
                 <CommentList />
             </div>
+
+        }
+
 
         </div>
 
