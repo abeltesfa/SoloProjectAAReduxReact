@@ -3,6 +3,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deletePost, fetchPosts } from '../../store/postReducer';
 import EditPost from '../EditPost';
+import CommentList from '../CommentList';
 
 
 const SinglePost = ({ posts }) => {
@@ -13,13 +14,7 @@ const SinglePost = ({ posts }) => {
     const [showEditPost, setShowEditPost] = useState(false);
     const user = useSelector(state => state.session.user);
 
-    // const userCheck = () => {
-    //     if(singlePost?.userId === +session?.user.id) {
-    //         return true
-    //     }
-    // }
 
-    // const post = useSelector(state => state.posts.postId)
 
     useEffect(() => {
         dispatch(fetchPosts());
@@ -60,6 +55,9 @@ const SinglePost = ({ posts }) => {
                 {(singlePost?.userId === user?.id) && (
                     <button onClick={deleteRedirect}>Delete Post</button>
                 )}
+            </div>
+            <div>
+                <CommentList />
             </div>
 
         </div>
