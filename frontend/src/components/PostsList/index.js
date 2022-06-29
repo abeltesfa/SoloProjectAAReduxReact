@@ -8,7 +8,7 @@ const PostsList = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const posts = useSelector(state=>state.posts);
+    const posts = useSelector(state => state.posts);
     const session = useSelector(state => state.session);
 
 
@@ -19,7 +19,7 @@ const PostsList = () => {
         dispatch(fetchPosts());
     }, [dispatch]);
 
-      useEffect(() => {
+    useEffect(() => {
     }, [posts]);
     // console.log(posts)
 
@@ -27,11 +27,13 @@ const PostsList = () => {
         <div>
             <ul>
                 {Object.values(posts).map(({ id, title }) => (
-                    <li key={id}><NavLink to={`/posts/${id}`}>{title}</NavLink></li>
+                    <div>
+                        <li key={id}><NavLink to={`/posts/${id}`}>{title}</NavLink></li>
+                    </div>
                 ))}
             </ul>
             {session.user &&
-            <button onClick={() => history.push('./posts/new')}>Create Post</button>
+                <button onClick={() => history.push('./posts/new')}>Create Post</button>
             }
         </div>
     )
