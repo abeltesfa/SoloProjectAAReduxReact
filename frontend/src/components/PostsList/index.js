@@ -27,8 +27,8 @@ const PostsList = () => {
         <div>
             <ul>
                 {Object.values(posts).map(({ id, title }) => (
-                    <div>
-                        <li key={id}><NavLink to={`/posts/${id}`}>{title}</NavLink></li>
+                    <div key={id}>
+                        <li><NavLink to={`/posts/${id}`}>{title}</NavLink></li>
                     </div>
                 ))}
             </ul>
