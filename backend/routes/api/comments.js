@@ -21,6 +21,15 @@ router.post('/', asyncHandler(async (req, res) => {
     return res.json(comment)
 }))
 
+router.delete('/', asyncHandler( async function (req, res) {
+    const commentId = req.body.id
+    const comment = await Comment.findByPk(commentId)
+    await comment.destroy();
+
+    return res.json(commentId);
+
+}))
+
 
 
 module.exports = router;
