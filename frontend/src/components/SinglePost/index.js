@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { deletePost, fetchPosts } from '../../store/postReducer';
 import EditPost from '../EditPost';
@@ -57,7 +57,9 @@ const SinglePost = ({ posts }) => {
     }
 
 
-    return (!showEditPost ?
+    return ( singlePost ?
+
+    (!showEditPost ?
 
         <div>
             <h1>{singlePost?.title}</h1>
@@ -90,6 +92,9 @@ const SinglePost = ({ posts }) => {
         <div>
             {content}
         </div>
+    )
+    :
+    <div>Please wait or click <Link exact to='/'>here</Link> to go home</div>
     )
 }
 

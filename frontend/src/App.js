@@ -39,6 +39,9 @@ function App() {
           <Route exact path='/posts/:postId'>
             <SinglePost posts={posts} />
           </Route>
+          <Route>
+            404 Page Not Found
+          </Route>
         </Switch>
       )}
     </>
