@@ -23,7 +23,7 @@ const CommentList = () => {
                 {Object.values(comments).map(({id, body, userId}) => (
                     <div key={id}>
                         <li>{body}</li>
-                        {(userId == user?.id) && (
+                        {(userId === user?.id) && (
                         <button onClick={() => deleteSpecificComment({id})}>Delete</button>
                         ) }
                     </div>
