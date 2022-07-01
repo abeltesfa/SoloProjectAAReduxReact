@@ -64,6 +64,7 @@ export const removeComment = (commentId) => async dispatch => {
 
 const initialState = {};
 
+
 const commentReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_COMMENTS:

@@ -9,6 +9,7 @@ const CommentList = () => {
     const user = useSelector(state => state.session.user);
     const {postId} = useParams();
 
+
     useEffect(() => {
         dispatch(getComments(postId))
     }, [dispatch, postId])

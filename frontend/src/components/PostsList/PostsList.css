@@ -1,0 +1,46 @@
+
+
+.homeBodyLink{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.home-links-container{
+    height: 200px;
+    width: 32%;
+    border-bottom: solid 1px #D8D8D8;
+    border-top: solid 1px #D8D8D8;
+
+}
+
+.home-body-links{
+    text-decoration: none;
+    color: black;
+
+}
+
+
+li{
+    list-style: none
+}
+
+.body-posts-container{
+    display: grid;
+    grid-template-areas: "a b c";
+}
+
+.body-leftside-container{
+    grid-area: a;
+}
+
+.body-rightside-container{
+    grid-area: c;
+}
+
+.body-middle-container{
+    grid-area: b;
+}

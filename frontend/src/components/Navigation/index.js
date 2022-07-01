@@ -6,6 +6,7 @@ import ProfileButton from './ProfileButton';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
+import logo from './logo.jpg'
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -27,20 +28,23 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
-        <button onClick={DemoLogin}>Demo User</button>
+        <NavLink to="/login" className='navlinks'>Log In</NavLink>
+        <NavLink to="/signup" className='navlinks'>Sign Up</NavLink>
+        <button onClick={DemoLogin} className='nav-demobtn'>Demo User</button>
       </>
     );
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
+    <div className='navigation-container'>
+    <img src={logo} className='nav-logo' alt=''></img>
+    <ul className='nav-list'>
+      <li className='nav-list-links'>
+        <NavLink exact to="/" className='navlinks'>Home</NavLink>
         {isLoaded && sessionLinks}
       </li>
     </ul>
+    </div>
   );
 }
 

@@ -1,0 +1,37 @@
+.navigation-container{
+    height: 50px;
+    background-color: black;
+    margin-top: -10px;
+
+
+}
+
+.navlinks{
+    display: inline;
+    color: white;
+    text-decoration: none;
+
+}
+
+.nav-demobtn{
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: medium;
+
+}
+
+.nav-list-links{
+    display: inline;
+
+}
+
+.nav-logo{
+    height: 50px;
+    width: 150px;
+}
+
+.nav-list{
+    display: inline;
+}
