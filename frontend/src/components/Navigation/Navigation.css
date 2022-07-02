@@ -1,17 +1,11 @@
 .navigation-container{
-    height: 50px;
+    display:flex;
+    align-items: center;
+    height: 75px;
     background-color: black;
-    margin-top: -10px;
-
 
 }
 
-.navlinks{
-    display: inline;
-    color: white;
-    text-decoration: none;
-
-}
 
 .nav-demobtn{
     background-color: black;
@@ -22,16 +16,35 @@
 
 }
 
-.nav-list-links{
-    display: inline;
-
-}
 
 .nav-logo{
     height: 50px;
     width: 150px;
 }
 
-.nav-list{
-    display: inline;
+.nav-links-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    text-decoration: none;
+}
+
+.navlinks{
+    text-decoration: none;
+    color: white;
+    padding: 25px;
+}
+
+
+.nav-container-right{
+    width:100%
+}
+
+.navlinks:hover{
+    background-color: gray;
+}
+
+.nav-demobtn:hover{
+    background-color: gray;
 }

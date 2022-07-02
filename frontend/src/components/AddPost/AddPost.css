@@ -1,0 +1,32 @@
+.inputBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: grey;
+    margin-top: 100px;
+    padding: 200px;
+    border-radius: 30px;
+
+}
+
+.create-post-container{
+    display: flex;
+    justify-content: center;
+
+}
+
+.create-post-submit-btn{
+    background-color: black;
+    color: white;
+}
+
+.create-post-title-input{
+    width: 300px;
+    border-radius: 30px;
+
+}
+
+.create-post-body-input{
+    width: 300px;
+    border-radius: 30px;
+}

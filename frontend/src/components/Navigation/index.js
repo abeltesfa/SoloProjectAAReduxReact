@@ -2,13 +2,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import ProfileButton from './ProfileButton';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import './Navigation.css';
 import logo from './logo.jpg'
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -19,11 +18,16 @@ function Navigation({ isLoaded }){
     return dispatch(sessionActions.login({ credential, password }))
   }
 
+  const logout = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.logout());
+  };
+
 
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <button className='nav-demobtn' onClick={logout}>Log Out</button>
     );
   } else {
     sessionLinks = (
@@ -37,13 +41,15 @@ function Navigation({ isLoaded }){
 
   return (
     <div className='navigation-container'>
-    <img src={logo} className='nav-logo' alt=''></img>
-    <ul className='nav-list'>
-      <li className='nav-list-links'>
+      <div className='nav-container-left'>
+        <img src={logo} className='nav-logo' alt=''></img>
+      </div>
+      <div className='nav-container-right'>
+        <div className='nav-links-container'>
         <NavLink exact to="/" className='navlinks'>Home</NavLink>
         {isLoaded && sessionLinks}
-      </li>
-    </ul>
+        </div>
+      </div>
     </div>
   );
 }

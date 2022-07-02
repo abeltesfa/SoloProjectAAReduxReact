@@ -26,25 +26,26 @@ const PostsList = () => {
 
     return (
         <div className='body-posts-container'>
-            <div className='body-leftside-container'>
-            <div className='body-rightside-container'>
+            <div className='body-leftside-container'></div>
             <div className='body-middle-container'>
-                {session.user &&
-                    <button onClick={() => history.push('./posts/new')}>Create Post</button>
-                }
+                <div className='body-create-post-btn-container'>
+                    {session.user &&
+                        <button className='body-create-post-btn' onClick={() => history.push('./posts/new')}>Create Post</button>
+                    }
+                </div>
                 <ul>
                     {Object.values(posts).map(({ id, title, body }) => (
                         <div className='home-links-container' key={id}>
                             <li><NavLink to={`/posts/${id}`} className='home-body-links'>
                                 <div><h3>{title}</h3></div>
                                 <div className='homeBodyLink'>{body}</div>
-                                </NavLink></li>
+                            </NavLink></li>
                         </div>
                     ))}
                 </ul>
             </div>
-            </div>
-            </div>
+            <div className='body-rightside-container'></div>
+
         </div>
     )
 }

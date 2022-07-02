@@ -11,7 +11,7 @@
 
 .home-links-container{
     height: 200px;
-    width: 32%;
+    width: 100%;
     border-bottom: solid 1px #D8D8D8;
     border-top: solid 1px #D8D8D8;
 
@@ -20,7 +20,6 @@
 .home-body-links{
     text-decoration: none;
     color: black;
-
 }
 
 
@@ -29,18 +28,43 @@ li{
 }
 
 .body-posts-container{
-    display: grid;
-    grid-template-areas: "a b c";
+    display: flex;
+    flex-direction: row;
+    width:100%;
 }
 
 .body-leftside-container{
-    grid-area: a;
+    width:25%;
+    border-right: solid 1px #D8D8D8;
 }
 
 .body-rightside-container{
-    grid-area: c;
+    width: 25%;
+    border-left: solid 1px #D8D8D8;
 }
 
 .body-middle-container{
-    grid-area: b;
+    display: flex;
+    width:50%;
+    flex-direction: column;
+}
+
+.body-create-post-btn{
+    font-size: large;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 75%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.body-create-post-btn-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
