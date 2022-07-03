@@ -1,32 +1,65 @@
-.inputBox{
+.inputBox {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: grey;
-    margin-top: 100px;
-    padding: 200px;
+    background-color: black;
+    border-radius: 30px;
+    padding: 30px;
+
+}
+
+.inputBox * {
+    padding: 5px;
+}
+
+.create-post-container {
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    padding: 75px;
+    border-radius: 20px;
+}
+
+.create-post-submit-btn {
+    background-color: gray;
+    color: white;
+    font-size: medium;
+    border-radius: 20px;
+    padding: 10px;
+    width: 300px;
+    cursor: pointer;
+}
+
+.create-post-submit-btn:hover{
+    background-color: darkgrey;
+}
+
+.create-post-title-input {
+    width: 300px;
     border-radius: 30px;
 
 }
 
-.create-post-container{
-    display: flex;
-    justify-content: center;
-
+.create-post-body-input {
+    width: 300px;
+    border-radius: 10px;
 }
 
-.create-post-submit-btn{
-    background-color: black;
+.create-post-title {
+    display: flex;
+    justify-content: center;
     color: white;
 }
 
-.create-post-title-input{
-    width: 300px;
-    border-radius: 30px;
-
+.create-post-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -75px;
+    height: 100vh;
 }
 
-.create-post-body-input{
-    width: 300px;
-    border-radius: 30px;
+.create-post-errors{
+    color: white;
 }
