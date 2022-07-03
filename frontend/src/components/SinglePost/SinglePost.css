@@ -25,7 +25,7 @@
 }
 
 .single-post-comment-container{
-    background-color: lightgray;
+    border: solid 5px #D8D8D8;;
     margin-top: 20px;
     border-radius: 15px;
     display: flex;
