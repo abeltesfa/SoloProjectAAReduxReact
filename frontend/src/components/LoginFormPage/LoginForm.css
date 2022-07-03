@@ -41,3 +41,7 @@
 .login-btn:hover{
     background-color: darkgray;
 }
+
+.login-input{
+    border-radius: 15px;
+}
