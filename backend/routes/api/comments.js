@@ -2,7 +2,7 @@ const express = require('express');
 const asyncHandler = require('express-async-handler');
 const router = express.Router();
 
-const { Comment } = require('../../db/models');
+const { Comment, User } = require('../../db/models');
 
 
 router.get('/:postId', asyncHandler( async(req, res) => {
@@ -10,7 +10,8 @@ router.get('/:postId', asyncHandler( async(req, res) => {
     const comments = await Comment.findAll({
         where: {
             postId
-        }
+        },
+        include: [User]
     });
     return res.json(comments);
 }))
@@ -18,7 +19,10 @@ router.get('/:postId', asyncHandler( async(req, res) => {
 router.post('/', asyncHandler(async (req, res) => {
     const {postId, body, userId} = req.body
     const comment = await Comment.create({postId, userId, body});
-    return res.json(comment)
+    const newComment = await Comment.findByPk(comment.id, {
+        include: [User]
+    })
+    return res.json(newComment)
 }))
 
 router.delete('/', asyncHandler( async function (req, res) {

@@ -1,0 +1,65 @@
+.edit-inputBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    border-radius: 30px;
+    padding: 30px;
+
+}
+
+.edit-inputBox * {
+    padding: 5px;
+}
+
+.edit-post-container {
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+    padding: 75px;
+    border-radius: 20px;
+}
+
+.edit-post-submit-btn {
+    background-color: gray;
+    color: white;
+    font-size: medium;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.edit-post-submit-btn:hover{
+    background-color: darkgrey;
+}
+
+.edit-post-title-input {
+    width: 300px;
+    border-radius: 30px;
+
+}
+
+.edit-post-body-input {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.edit-post-title {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.edit-post-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -75px;
+    height: 100vh;
+}
+
+.edit-post-errors{
+    color: white;
+}

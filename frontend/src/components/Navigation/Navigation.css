@@ -1,0 +1,50 @@
+.navigation-container{
+    display:flex;
+    align-items: center;
+    height: 75px;
+    background-color: black;
+
+}
+
+
+.nav-demobtn{
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: medium;
+
+}
+
+
+.nav-logo{
+    height: 50px;
+    width: 150px;
+}
+
+.nav-links-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    text-decoration: none;
+}
+
+.navlinks{
+    text-decoration: none;
+    color: white;
+    padding: 25px;
+}
+
+
+.nav-container-right{
+    width:100%
+}
+
+.navlinks:hover{
+    background-color: gray;
+}
+
+.nav-demobtn:hover{
+    background-color: gray;
+}

@@ -1,0 +1,86 @@
+
+
+.homeBodyLink{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.home-links-container{
+    height: 200px;
+    width: 100%;
+    border-bottom: solid 1px #D8D8D8;
+    border-top: solid 1px #D8D8D8;
+
+}
+
+.home-body-links{
+    text-decoration: none;
+    color: black;
+}
+
+
+li{
+    list-style: none
+}
+
+.body-posts-container{
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+.body-leftside-container{
+    width:25%;
+    border-right: solid 1px #D8D8D8;
+    margin-left: 10px;
+
+}
+
+.body-rightside-container{
+    width: 25%;
+    border-left: solid 1px #D8D8D8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.body-middle-container{
+    display: flex;
+    width:50%;
+    flex-direction: column;
+}
+
+.body-create-post-btn{
+    font-size: large;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 75%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+
+.body-create-post-btn-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.welcome-text{
+    position: sticky;
+
+}
+
+.aboutPic{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}

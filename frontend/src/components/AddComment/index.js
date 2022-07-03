@@ -37,9 +37,12 @@ const AddComment = ({ hideForm, postId }) => {
               placeholder='Add your comment'
               rows='10'
               required
+              className='add-comment-form-input'
             ></textarea>
-            <button type='submit'>Submit</button>
-            <button type="button" onClick={handleCancelClick}>Cancel</button>
+            <div>
+            <button className='single-post-btn' type='submit'>Submit</button>
+            <button className='single-post-btn' type="button" onClick={handleCancelClick}>Cancel</button>
+            </div>
           </form>
         </div>
     )

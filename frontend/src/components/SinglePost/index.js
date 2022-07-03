@@ -5,6 +5,7 @@ import { deletePost, fetchPosts } from '../../store/postReducer';
 import EditPost from '../EditPost';
 import CommentList from '../CommentList';
 import AddComment from '../AddComment';
+import './SinglePost.css'
 
 
 const SinglePost = ({ posts }) => {
@@ -42,8 +43,8 @@ const SinglePost = ({ posts }) => {
     if (showAddComment) {
         commentContent = (
             <AddComment
-            postId={postId}
-            hideForm={() => setShowAddComment(false)}
+                postId={postId}
+                hideForm={() => setShowAddComment(false)}
             />
         )
     }
@@ -57,44 +58,46 @@ const SinglePost = ({ posts }) => {
     }
 
 
-    return ( singlePost ?
+    return (singlePost ?
 
-    (!showEditPost ?
+        (!showEditPost ?
+            <div className='single-post-outer'>
+                <div className='single-post-container'>
+                    <h1>{singlePost?.title}</h1>
+                    <p>{singlePost?.body}</p>
+                    <div>
+                        {(!showEditPost && (singlePost?.userId === user?.id)) && (
+                            <button className='single-post-btn' onClick={() => setShowEditPost(true)}>Edit</button>
+                        )}
+                        {(singlePost?.userId === user?.id) && (
+                            <button className='single-post-btn' onClick={deleteRedirect}>Delete Post</button>
+                        )}
+                    </div>
+                </div>
+                {user ?
+                    <div className='single-post-comment-container'>
+                        <CommentList />
+                        <button className='single-post-add-comment-btn' onClick={() => setShowAddComment(true)}>Add Comment</button>
+                        {commentContent}
+                    </div>
+                    :
+                    <div className='single-post-comment-container'>
+                        <CommentList />
+                    </div>
 
-        <div>
-            <h1>{singlePost?.title}</h1>
-            <p>{singlePost?.body}</p>
-            <div>
-                {(!showEditPost && (singlePost?.userId === user?.id)) && (
-                    <button onClick={() => setShowEditPost(true)}>Edit</button>
-                )}
-                {(singlePost?.userId === user?.id) && (
-                    <button onClick={deleteRedirect}>Delete Post</button>
-                )}
+                }
+
+
             </div>
-            {user ?
-            <div>
-                <CommentList />
-                <button onClick={() => setShowAddComment(true)}>Add Comment</button>
-                {commentContent}
-            </div>
+
+
             :
             <div>
-                <CommentList />
+                {content}
             </div>
-
-        }
-
-
-        </div>
-
+        )
         :
-        <div>
-            {content}
-        </div>
-    )
-    :
-    <div>Please wait or click <Link exact to='/'>here</Link> to go home</div>
+        <div>Please wait or click <Link exact to='/'>here</Link> to go home</div>
     )
 }
 

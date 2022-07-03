@@ -27,7 +27,6 @@ export const removePost = (post) => {
 export const fetchPosts = () => async (dispatch) => {
     const response = await csrfFetch('/api/posts');
     const posts = await response.json();
-    // console.log(posts)
 
     if (response.ok){
         dispatch(loadPosts(posts));
@@ -78,14 +77,6 @@ export const deletePost = (postId) => async dispatch => {
         return post;
     }
 }
-// export const getOnePost = postId => async dispatch => {
-//     const response = await csrfFetch(`/api/posts/${postId}`);
-
-//     if (response.ok) {
-//         const post = await response.json();
-//         dispatch()
-//     }
-// }
 
 const initialState = { }
 
