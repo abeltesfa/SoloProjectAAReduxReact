@@ -76,12 +76,14 @@ const SinglePost = ({ posts }) => {
                 </div>
                 {user ?
                     <div className='single-post-comment-container'>
+                        <h2>Comments</h2>
                         <CommentList />
                         <button className='single-post-add-comment-btn' onClick={() => setShowAddComment(true)}>Add Comment</button>
                         {commentContent}
                     </div>
                     :
                     <div className='single-post-comment-container'>
+                        <h2>Comments</h2>
                         <CommentList />
                     </div>
 
