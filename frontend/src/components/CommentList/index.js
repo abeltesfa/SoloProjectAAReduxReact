@@ -18,12 +18,15 @@ const CommentList = () => {
         await dispatch(removeComment(commentId))
     }
 
+
     return (
         <div>
             <ul>
-                {Object.values(comments).map(({id, body, userId}) => (
-                    <div key={id}>
-                        <li>{body}</li>
+                {Object.values(comments).map(({id, body, userId, User}) => (
+                    <div className='single-post-comment' key={id}>
+                        <li>{body}
+                        By: {User.username}
+                        </li>
                         {(userId === user?.id) && (
                         <button onClick={() => deleteSpecificComment({id})}>Delete</button>
                         ) }
