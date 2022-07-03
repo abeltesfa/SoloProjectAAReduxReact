@@ -1,7 +1,8 @@
 import { csrfFetch } from "./csrf";
 const LOAD_COMMENTS = '/comments/loadComments';
 const ADD_COMMENT = '/comments/addComments';
-const DELETE_COMMENT = '/comments/deleteComments'
+const DELETE_COMMENT = '/comments/deleteComments';
+const CLEAR_COMMENTS = '/comments/clearComments';
 
 
 const loadComments = (comments) => {
@@ -22,6 +23,12 @@ const deleteComment = (commentId) => {
     return {
         type: DELETE_COMMENT,
         commentId
+    }
+}
+
+export const clearComments = () => {
+    return {
+        type: CLEAR_COMMENTS
     }
 }
 
@@ -83,6 +90,10 @@ const commentReducer = (state = initialState, action) => {
             delete newState3[action.commentId]
 
             return newState3;
+
+        case CLEAR_COMMENTS:
+            const newState4 = {}
+            return newState4;
 
         default:
             return state;

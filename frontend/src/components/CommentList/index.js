@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getComments, removeComment } from '../../store/commentReducer';
+import { getComments, removeComment, clearComments } from '../../store/commentReducer';
 
 const CommentList = () => {
     const dispatch = useDispatch();
@@ -11,7 +11,9 @@ const CommentList = () => {
 
 
     useEffect(() => {
+
         dispatch(getComments(postId))
+        return (() => dispatch(clearComments()))
     }, [dispatch, postId])
 
     const deleteSpecificComment = async(commentId) => {
@@ -25,7 +27,9 @@ const CommentList = () => {
                 {Object.values(comments).map(({id, body, userId, User}) => (
                     <div className='single-post-comment' key={id}>
                         <li>{body}
-                        By: {User.username}
+                        <div>
+                        Comment By: {User?.username}
+                        </div>
                         </li>
                         {(userId === user?.id) && (
                         <button onClick={() => deleteSpecificComment({id})}>Delete</button>

@@ -19,7 +19,10 @@ router.get('/:postId', asyncHandler( async(req, res) => {
 router.post('/', asyncHandler(async (req, res) => {
     const {postId, body, userId} = req.body
     const comment = await Comment.create({postId, userId, body});
-    return res.json(comment)
+    const newComment = await Comment.findByPk(comment.id, {
+        include: [User]
+    })
+    return res.json(newComment)
 }))
 
 router.delete('/', asyncHandler( async function (req, res) {
