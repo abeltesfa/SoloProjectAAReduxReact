@@ -32,7 +32,7 @@ const CommentList = () => {
                         </div>
                         </li>
                         {(userId === user?.id) && (
-                        <button onClick={() => deleteSpecificComment({id})}>Delete</button>
+                        <button className='delete-comment-btn' onClick={() => deleteSpecificComment({id})}>Delete</button>
                         ) }
                     </div>
                 ))}
