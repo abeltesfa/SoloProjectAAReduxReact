@@ -36,11 +36,16 @@ li{
 .body-leftside-container{
     width:25%;
     border-right: solid 1px #D8D8D8;
+    margin-left: 10px;
+
 }
 
 .body-rightside-container{
     width: 25%;
     border-left: solid 1px #D8D8D8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .body-middle-container{
@@ -67,4 +72,15 @@ li{
     display: flex;
     justify-content: center;
     margin-top: 10px;
+}
+
+.welcome-text{
+    position: sticky;
+
+}
+
+.aboutPic{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
 }
