@@ -75,7 +75,7 @@ const AddPost = () => {
                 placeholder='Title'
                 name='title'
                 className='create-post-title-input'
-                maxlength="75"
+                maxlength="70"
               />
             </div>
             <div>

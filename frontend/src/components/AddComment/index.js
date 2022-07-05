@@ -38,6 +38,7 @@ const AddComment = ({ hideForm, postId }) => {
               rows='10'
               required
               className='add-comment-form-input'
+              maxlength="170"
             ></textarea>
             <div>
             <button className='single-post-btn' type='submit'>Submit</button>

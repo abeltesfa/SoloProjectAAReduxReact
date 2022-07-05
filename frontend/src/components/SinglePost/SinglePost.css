@@ -43,6 +43,7 @@
     color: white;
     margin: 5px;
     border-radius: 10px;
+    overflow-wrap: break-word;
 }
 
 .single-post-add-comment-btn{
