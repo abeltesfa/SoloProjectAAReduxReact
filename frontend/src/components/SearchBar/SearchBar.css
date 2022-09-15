@@ -33,9 +33,9 @@
     border-radius: 3px;
     box-shadow: 0px 0px 3px gray;
     position: absolute;
-    top: 57px;
+    top: 325px;
     height: 350px;
-    width: 300px;
+    width: 275px;
     padding: 12px 0px 0px;
     overflow: auto;
 }
@@ -46,7 +46,7 @@
 
 .search-results>div>a {
     text-decoration: none;
-    color: #FF385C;
+    color: black;
 }
 
 .search-none {

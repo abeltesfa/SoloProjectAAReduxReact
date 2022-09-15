@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import "./SearchBar.css"
 
 const SearchBar = () => {
@@ -23,7 +22,7 @@ const SearchBar = () => {
 
     const handleChange = (searchWord) => {
         if (searchWord) {
-            const searchPostResults = posts.posts.filter(post => post.title.toLowerCase().startsWith(searchWord.toLowerCase()))
+            const searchPostResults = posts.filter(post => post.title.toLowerCase().includes(searchWord.toLowerCase()))
 
             setPostData(searchPostResults);
             setDropdown(true);
@@ -47,7 +46,7 @@ const SearchBar = () => {
             }
             <div className="search-field">
                 <input
-                    placeholder="Search Make, Model, or Year"
+                    placeholder="Search Post Title"
                     onChange={(e) => handleChange(e.target.value)}
                     value={searchInput}
                 >
