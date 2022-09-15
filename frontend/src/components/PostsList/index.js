@@ -4,6 +4,7 @@ import { NavLink, useHistory } from 'react-router-dom';
 import { fetchPosts } from '../../store/postReducer';
 import "./PostsList.css"
 import aboutPic from './IMG_0788.JPG'
+import SearchBar from '../SearchBar';
 
 
 const PostsList = () => {
@@ -29,6 +30,9 @@ const PostsList = () => {
                     <h1>Welcome to extraMedium</h1>
                     {!user && (<p>(Please sign in to create posts)</p>)}
                     <h3>extraMedium is a site where users can create posts about their favorite topics. </h3>
+                </div>
+                <div>
+                    <SearchBar />
                 </div>
             </div>
             <div className='body-middle-container'>
