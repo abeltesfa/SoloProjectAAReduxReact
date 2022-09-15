@@ -14,10 +14,6 @@ const PostsList = () => {
     const session = useSelector(state => state.session);
     const user = useSelector(state => state.session.user);
 
-
-
-
-
     useEffect(() => {
         dispatch(fetchPosts());
     }, [dispatch]);
@@ -54,7 +50,7 @@ const PostsList = () => {
             </div>
             <div className='body-rightside-container'>
                 <div>
-                <h1>About:</h1>
+                    <h1>About:</h1>
                 </div>
                 <div>
                     <img className='aboutPic' alt='about' src={aboutPic}></img>
