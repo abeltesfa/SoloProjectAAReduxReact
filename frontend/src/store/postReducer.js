@@ -62,7 +62,6 @@ export const updatePost = post => async dispatch => {
     formData.append("title", title);
     formData.append("body", body);
     if (image) formData.append("image", image);
-    console.log('+++++++++++++++++', image)
 
     const response = await csrfFetch(`/api/posts/${post.id}`, {
         method: 'PUT',
