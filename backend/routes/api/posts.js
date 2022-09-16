@@ -14,18 +14,17 @@ router.get('/', asyncHandler( async(req, res) => {
 router.post('/', singleMulterUpload("image"), asyncHandler(async (req, res) => {
     const {title, body, userId} = req.body
     const image = await singlePublicFileUpload(req.file);
-    console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!', image)
     const post = await Post.create({userId, title, body, image});
-    console.log('++++++++++++++++++++++++', post)
     return res.json(post)
 }))
 
-router.put('/:postId', asyncHandler( async function (req, res) {
+router.put('/:postId', singleMulterUpload("image"), asyncHandler( async function (req, res) {
     const postId = req.params.postId
     const post = await Post.findByPk(postId)
 
     const {title, body} = req.body;
-    await post.update({title, body});
+    const image = await singlePublicFileUpload(req.file);
+    await post.update({title, body, image});
     await post.save()
     return res.json(post);
 

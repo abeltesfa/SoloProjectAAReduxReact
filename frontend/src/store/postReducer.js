@@ -57,12 +57,19 @@ export const createPost = (payload) => async (dispatch) => {
 
 
 export const updatePost = post => async dispatch => {
+    const {title, body, image} = post;
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("body", body);
+    if (image) formData.append("image", image);
+    console.log('+++++++++++++++++', image)
+
     const response = await csrfFetch(`/api/posts/${post.id}`, {
         method: 'PUT',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'multipart/form-data'
         },
-        body: JSON.stringify(post)
+        body: formData
     });
 
     if (response.ok) {

@@ -26,7 +26,7 @@
     font-size: medium;
     border-radius: 20px;
     padding: 10px;
-    width: 100px;
+    width: 200px;
     cursor: pointer;
 }
 
@@ -35,13 +35,13 @@
 }
 
 .edit-post-title-input {
-    width: 300px;
+    width: 400px;
     border-radius: 30px;
 
 }
 
 .edit-post-body-input {
-    width: 300px;
+    width: 400px;
     border-radius: 10px;
 }
 

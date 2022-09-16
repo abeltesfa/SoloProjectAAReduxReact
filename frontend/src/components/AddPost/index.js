@@ -54,6 +54,8 @@ const AddPost = () => {
     if (file) setImage(file);
   };
 
+
+
   return (
     <div className='create-post-outer'>
       <div className='create-post-container'>

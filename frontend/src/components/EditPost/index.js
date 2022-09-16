@@ -7,6 +7,7 @@ import './EditPost.css'
 const EditPost = ({ singlePost, hideForm }) => {
   const [title, setTitle] = useState(singlePost.title);
   const [body, setBody] = useState(singlePost.body);
+  const [image, setImage] = useState(null);
 
   // const session = useSelector(state => state.session);
 
@@ -18,7 +19,8 @@ const EditPost = ({ singlePost, hideForm }) => {
     const payload = {
       ...singlePost,
       title,
-      body
+      body,
+      image
     };
 
     let updatedPost = dispatch(updatePost(payload));
@@ -32,6 +34,10 @@ const EditPost = ({ singlePost, hideForm }) => {
     hideForm();
   };
 
+  const updateFile = (e) => {
+    const file = e.target.files[0];
+    if (file) setImage(file);
+  };
 
 
   return (
@@ -45,6 +51,7 @@ const EditPost = ({ singlePost, hideForm }) => {
             <div>
               <input
                 type='text'
+                className='edit-post-title-input'
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
                 placeholder='Title'
@@ -53,10 +60,15 @@ const EditPost = ({ singlePost, hideForm }) => {
               />
             </div>
             <div>
+              <label htmlFor="image" className='imageLabel'>Add Image(Optional) </label>
+              <input id='image' type="file" onChange={updateFile} />
+            </div>
+            <div>
               <textarea
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 name='body'
+                className='edit-post-body-input'
                 placeholder='Add your post'
                 rows='10'
                 required
