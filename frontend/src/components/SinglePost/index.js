@@ -64,6 +64,9 @@ const SinglePost = ({ posts }) => {
             <div className='single-post-outer'>
                 <div className='single-post-container'>
                     <h1>{singlePost?.title}</h1>
+                    {singlePost.image && (
+                        <img className='single-post-image' alt='' src={singlePost?.image} />
+                    )}
                     <p>{singlePost?.body}</p>
                     <div>
                         {(!showEditPost && (singlePost?.userId === user?.id)) && (

@@ -6,6 +6,7 @@ module.exports = {
     {
       userId: 4,
       title: "Why Lebron is the GOAT",
+      image: "",
       body: `LeBron Is More Clutch Than Jordan
       While the typical trends we've seen in the other statistical comparisons seem to continue here, the two players' level of improvement in clutch situations is incredibly different. Not only does LeBron win more than Jordan in areas of eliminating opponents and facing elimination, he also performs better. When LeBron has a chance to eliminate an opponent, he improves in points, blocks, steals, and rebounds. When he's facing elimination he improves in every major statistical category except for shooting percentages and turnovers. In fact, he averages over six more points and three more rebounds in those situations.
 
@@ -16,6 +17,7 @@ module.exports = {
     {
       userId: 5,
       title: "Steph Curry loves Golf",
+      image: "",
       body: `There's a new golf tour that seeks to give talented players more opportunities to prove their abilities at some wonderful courses. The goal is to help grow the game by making it more inclusive.
 
       I'm talking, of course, about the Underrated Golf Tour.
@@ -36,6 +38,7 @@ module.exports = {
     {
       userId: 6,
       title: "2 Technologies that will change the world",
+      image: "",
       body: `Artificial Intelligence
       Artificial intelligence, or AI, and machine learning refer to the ability of machines to learn and act intelligently, meaning they can make decisions, carry out tasks, and even predict future outcomes based on what they learn from data.
 
@@ -65,6 +68,7 @@ module.exports = {
     {
       userId: 7,
       title: "Facts about Slovenia",
+      image: "",
       body: `
       In the Heart of Europe
       Where the Alps meet the Mediterranean and the Pannonian Plain meets the Karst, there is Slovenia. This small green country extends in the area of 20,273 km2. It is one of the countries with an exceptional number of top athletes and rich cultural creation. In Slovenia it is not difficult to compare the value of goods and services, as they are priced in one of the most important world currencies... in euros.
@@ -108,6 +112,7 @@ module.exports = {
     {
       userId: 8,
       title: "Early life and summary of Giannis",
+      image: "",
       body: `Giannis Sina Ugo Antetokounmpo (born December 6, 1994)is a Greek-Nigerian professional basketball player for the Milwaukee Bucks of the National Basketball Association (NBA). Antetokounmpo's country of origin, in addition to his size, speed, strength, and ball-handling skills have earned him the nickname "Greek Freak".
 
       Born and raised in Athens to Nigerian immigrants, Antetokounmpo began playing basketball for the youth teams of Filathlitikos in Athens. In 2011, he began playing for the club's senior team before entering the 2013 NBA draft, where he was selected 15th overall by the Bucks. In 2016 to 2017 he led the Bucks in all five major statistical categories and became the first player in NBA history to finish a regular season in the top 20 in all five statistics of total points, rebounds, assists, steals, and blocks. He received the Most Improved Player award in 2017. Antetokounmpo has received six All-Star selections, including being selected as an All-Star captain in 2019 and 2020, as he led the Eastern Conference in voting in these two years.

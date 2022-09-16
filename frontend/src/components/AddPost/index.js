@@ -87,7 +87,7 @@ const AddPost = () => {
             </div>
             <div>
               <label htmlFor="image" className='imageLabel'>Add Image(Optional) </label>
-              <input id='image' type="file" accept="image/*" onChange={updateFile} />
+              <input id='image' type="file" onChange={updateFile} />
             </div>
             <div>
               <textarea
