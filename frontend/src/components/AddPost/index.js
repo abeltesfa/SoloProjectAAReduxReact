@@ -7,6 +7,7 @@ import './AddPost.css'
 const AddPost = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
+  const [image, setImage] = useState(null);
   const [validationErrors, setValidationErrors] = useState([]);
   const [hasSubmitted, setHasSubmitted] = useState(false);
   const user = useSelector(state => state.session.user)

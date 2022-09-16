@@ -35,10 +35,17 @@ export const fetchPosts = () => async (dispatch) => {
 };
 
 export const createPost = (payload) => async (dispatch) => {
+    const {userId, title, body, image} = payload;
+    const formData = new FormData();
+    formData.append("userId", userId);
+    formData.append("title", title);
+    formData.append("body", body);
+    if (image) formData.append("image", image);
+
     const response = await csrfFetch('/api/posts', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
+      headers: { 'Content-Type': 'multipart/form-data' },
+      body: formData
     });
 
     if (response.ok) {
