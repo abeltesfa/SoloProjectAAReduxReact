@@ -38,7 +38,8 @@ const AddPost = () => {
     const formInformation = {
       userId: user.id,
       title,
-      body
+      body,
+      image
     }
 
     const post = await dispatch(createPost(formInformation))
@@ -46,7 +47,12 @@ const AddPost = () => {
       history.push(`/posts/${post.id}`)
     }
     setHasSubmitted(false);
-  }
+  };
+
+  const updateFile = (e) => {
+    const file = e.target.files[0];
+    if (file) setImage(file);
+  };
 
   return (
     <div className='create-post-outer'>
@@ -67,7 +73,7 @@ const AddPost = () => {
               </div>
             )}
           </div>
-          <form onSubmit={onSubmit}>
+          <form className='createpostform' onSubmit={onSubmit}>
             <div>
               <input
                 type='text'
@@ -78,6 +84,10 @@ const AddPost = () => {
                 className='create-post-title-input'
                 maxlength="70"
               />
+            </div>
+            <div>
+              <label htmlFor="image" className='imageLabel'>Add Image(Optional) </label>
+              <input id='image' type="file" accept="image/*" onChange={updateFile} />
             </div>
             <div>
               <textarea
